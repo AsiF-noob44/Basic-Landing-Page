@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: pointer url('funfiles/Cool-Text-Xcillence-458892477367626.png'), auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.html {
+    overflow-x: hidden;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('/funfiles/lofi-room-cityscape-urban-1920x1200-14880.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: hwb(0 60% 39%);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.navbar ul li a.active {
+    color: hwb(0 60% 39%);
+}
+
+.navbar ul li::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: hwb(0 49% 45%);
+    display: block;
+    position: relative;
+    margin: auto;
+    transition: 0.5s;
+    bottom: -5px;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: hwb(0 100% 0% / 0.916);
+    justify-content: space-evenly;
+}
+
+.content h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    text-shadow: 20px 20px 20px black;
+    animation-name: slideLeft;
+    animation-duration: 2s;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    color: hsl(0, 0%, 80%);
+    text-shadow: 1em 1em 1em black;
+    animation-name: rotate;
+    animation-duration: 1.5s;
+}
+
+button {
+    width: 200px;
+    padding: 15px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid aquamarine;
+    background: transparent;
+    color: rgb(253, 249, 243);
+    font-size: large;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.5s, color 0.5s;
+    outline: none;
+}
+#button1 {
+    margin-right: 20px;
+}
+#button2 {
+    margin-left: 20px; 
+}
+
+button:hover {
+    background-color: hsl(184, 100%, 50%);
+    color: black;
+    border: none;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+span {
+    background: cadetblue;
+    height: 100%;
+    width: 0;
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    z-index: -1;
+    transition: width 0.5s ease;
+}
+
+#button1 {
+    animation-name: slideRight;
+    animation-duration: 1.5s;
+}
+
+#button2 {
+    animation-name: slideRight;
+    animation-duration: 1.5s;
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(300%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    from { transform: translateY(400%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes rotate {
+    50% { transform: rotateX(180deg); }
+    to { transform: rotateX(0deg); }
+}
+
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 40px;
+    }
+
+    .navbar ul li {
+        margin: 0 10px;
+    }
+
+    button {
+        width: 150px;
+        padding: 10px;
+    }
+}
